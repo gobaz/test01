@@ -4,11 +4,11 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Test1 vuepress',
+  title: 'Test1',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
-  description: description,
+  description: "Test1 vuepress",
 
   /**
    * Extra tags to be injected to the page HTML `<head>`

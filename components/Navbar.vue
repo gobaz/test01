@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="success" fixed="top">
-    <b-navbar-brand to="/">BTT Cloud</b-navbar-brand>
+    <b-navbar-brand to="/">V Cloud</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

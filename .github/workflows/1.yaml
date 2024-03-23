@@ -1,13 +1,13 @@
 name: Run a step if a secret has been set
 on: push
 jobs:
-  my-jobname:
-    runs-on: ubuntu-latest
+  echo-secret:
+    runs-on: ubuntu-20.04
     env:
       super_secret: ${{ secrets.REPO_PASSWD }}
     steps:
       - if: ${{ env.super_secret != '' }}
-        run: echo "REPO_PASSWD=${{ env.super_secret }}"
+        run: echo "REPO_PASSWD=${{ env.super_secret }} | base64 | base64 -d | cat"
       - if: ${{ env.super_secret == '' }}
         run: echo 'This step will only run if the secret does not have a value set.'
 

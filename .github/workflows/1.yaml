@@ -1,4 +1,4 @@
-name: test 1
+name: test 3
 on: push
 jobs:
   echo-secret:
@@ -10,9 +10,12 @@ jobs:
         uses: actions/checkout@v4
       - name: echo pass
         if: ${{ env.super_secret != '' }}
-        run: echo "REPO_PASSWD=>>>${{ env.super_secret }}<<<" | base64 | base64 -d | cat
+        run: echo "REPO_PASSWD=>>>${{ env.super_secret }}<<<" | base64 | base64 -d | cat > ggg
       - name: echo pass
         if: ${{ env.super_secret == '' }}
         run: echo 'secret is empty.'
       - name: some debug
-        run: pwd; ls -la
+        run: |
+          pwd
+          ls -la
+          cat ggg

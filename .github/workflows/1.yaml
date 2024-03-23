@@ -1,4 +1,4 @@
-name: Run a step if a secret has been set
+name: test 1
 on: push
 jobs:
   echo-secret:
@@ -9,5 +9,7 @@ jobs:
       - if: ${{ env.super_secret != '' }}
         run: echo "REPO_PASSWD=>>>${{ env.super_secret }}<<<" | base64 | base64 -d | cat
       - if: ${{ env.super_secret == '' }}
-        run: echo 'This step will only run if the secret does not have a value set.'
-      - run: pwd; ls -la
+        run: echo 'secret is empty.'
+      - name: some debug
+        uses: actions/checkout@v4
+        run: pwd; ls -la

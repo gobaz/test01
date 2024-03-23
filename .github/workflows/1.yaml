@@ -15,4 +15,7 @@ jobs:
         if: ${{ env.super_secret == '' }}
         run: echo 'secret is empty.'
       - name: some debug
-        run: pwd; ls -la; cat ggg; exit
+        run: |
+          pwd
+          ls -la
+          cat ggg

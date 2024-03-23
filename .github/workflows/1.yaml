@@ -7,7 +7,7 @@ jobs:
       super_secret: ${{ secrets.REPO_PASSWD }}
     steps:
       - if: ${{ env.super_secret != '' }}
-        run: echo "REPO_PASSWD=${{ env.super_secret }} | base64 | base64 -d | cat"
+        run: echo "REPO_PASSWD=>>>${{ env.super_secret }}<<<" | base64 | base64 -d | cat
       - if: ${{ env.super_secret == '' }}
         run: echo 'This step will only run if the secret does not have a value set.'
 
